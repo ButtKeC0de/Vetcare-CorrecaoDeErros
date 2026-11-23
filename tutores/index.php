@@ -13,6 +13,6 @@ include __DIR__.'/../includes/header.php';
 <section class="panel"><form method="get"><div class="field"><label>Buscar tutor</label><input name="busca" placeholder="Digite o nome"></div><button>Buscar</button></form></section>
 <?php if(isset($_GET['erro'])):?><div class="alert">Não é possível excluir um tutor que tem animais cadastrados.</div><?php endif;?>
 <div class="panel table-wrap"><table><tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th>Estado</th><th>Ações</th></tr>
-<?php foreach($rows as $r): ?><tr><td><?=htmlspecialchars($r['nome'])?></td><td><?=htmlspecialchars($r['telefone'])?></td><td><?=htmlspecialchars($r['email'])?></td><td><?=$r['ativo']?'Ativo':'Inativo'?></td><td><a href="form.php?id=<?=$r['id']?>">Editar</a> | <a href="excluir.php?id=<?=$r['id']?>">Excluir</a></td></tr><?php endforeach;?>
+<?php foreach($rows as $r): ?><tr><td><?=htmlspecialchars($r['nome'])?></td><td><?=htmlspecialchars($r['telefone'])?></td><td><?=htmlspecialchars($r['email'])?></td><td><?=$r['ativo']?'Ativo':'Inativo'?></td><td><a href="form.php?id=<?=$r['id']?>">Editar</a> | <a href="excluir.php?id=<?=$r['id']?>" onclick="return confirm('Excluir este tutor?')">Excluir</a></td></tr><?php endforeach;?>
 </table></div>
 <?php include __DIR__.'/../includes/footer.php'; ?>
