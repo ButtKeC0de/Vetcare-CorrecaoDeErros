@@ -8,10 +8,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $stmt=$pdo->prepare("SELECT * FROM usuarios WHERE usuario=?");
     $stmt->execute([$usuario]);
     $conta=$stmt->fetch();
-    if (!$conta) {
-        $erro='Usuário não encontrado.';
-    } elseif ($senha !== $conta['senha']) {
-        $erro='Senha incorreta.'; 
+    if (!$conta || $senha !== $conta['senha']) {
+        $erro='Usuário ou senha inválidos.';
     } else {
         session_regenerate_id(true);
         $_SESSION['usuario_id']=$conta['id'];
