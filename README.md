@@ -8,7 +8,7 @@ Projeto didático em PHP + MySQL/MariaDB para execução local no XAMPP.
 3. Acesse `http://localhost/phpmyadmin` e importe `database/vetcare.sql`.
 4. Acesse `http://localhost/vetcare_manutencao/`.
 5. Entre com:
-   - Usuário: `admin`
+   - Usuário: `admin''
    - Senha: `admin123`
 
 > **Atenção:** este sistema contém falhas intencionais para uma atividade de identificação, registro e priorização de chamados. Use somente em ambiente local isolado, com dados fictícios. Não publique na internet nem utilize dados reais.
